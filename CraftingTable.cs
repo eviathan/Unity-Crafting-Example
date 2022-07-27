@@ -15,6 +15,8 @@ public class CraftingTable : MonoBehaviour
         foreach (var ingredient in RecipeBook.Recipes[typeof(TCraftableItem)])
             craftingSource.Inventory.TryUse(ingredient.Key, ingredient.Value);
         
+        craftingSource.Inventory.Add<TCraftableItem>();
+
         return item;
     }
 
