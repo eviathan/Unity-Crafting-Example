@@ -35,7 +35,6 @@ public class Inventory
 
     public override string ToString()
     {
-        var items = _items.Select(item => $"{item.Key}: {item.Value}{Environment.NewLine}");
-        return $"{Environment.NewLine}{string.Join("", items)}";
+        return string.Join(", ", _items.Select(item => $"{item.Key}: {item.Value}"));
     }
 }

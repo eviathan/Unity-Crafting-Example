@@ -11,7 +11,7 @@ public static class RecipeBook
             { 
                 { typeof(Wood), 1 },
                 { typeof(Steel), 2 }
-            } 
+            }
         }
     };
 }

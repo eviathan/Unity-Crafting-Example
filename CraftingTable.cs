@@ -8,7 +8,7 @@ public class CraftingTable : MonoBehaviour
         where TCraftableItem : ICraftable, new()
     {
         if(!CanCraft<TCraftableItem>(craftingSource))
-            throw new ArgumentOutOfRangeException($"Could not craft {typeof(TCraftableItem)}");
+            throw new CraftingException($"Could not craft {typeof(TCraftableItem)}");
 
         var item =  new TCraftableItem();
 

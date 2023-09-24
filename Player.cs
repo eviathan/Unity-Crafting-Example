@@ -15,6 +15,9 @@ public class Player : MonoBehaviour, ICraftingSource
             
         Inventory.Add<Wood>(10);
         Inventory.Add<Steel>(5);
+
+        Debug.Log("Make me a sword please!");
+        Debug.Log(Inventory);
     }
 
     void Update()
@@ -23,16 +26,14 @@ public class Player : MonoBehaviour, ICraftingSource
         {
             try
             {
-
-                Debug.Log("Make me a sword please!");
-                Debug.Log(Inventory);
-                
+                Debug.Log("Attempting to craft a sword:");
                 var sword = _craftingTable.Craft<Sword>(this);
-
+                Debug.Log("Sword Crafted!");
                 Debug.Log(Inventory);
             }
-            catch(Exception ex)
+            catch(CraftingException ex)
             {
+                // Handle CraftingException here
                 Debug.LogError(ex.Message);
             }
         }
